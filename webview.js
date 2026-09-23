@@ -4,14 +4,14 @@ function _interopRequireDefault(obj) {
 
 const _path = _interopRequireDefault(require('path'));
 
-module.exports = (Ferdium) => {
+module.exports = Ferdium => {
   const getMessages = () => {
     const notifications = Ferdium.safeParseInt(
-      document.querySelector('a[href="/notifications"] span')?.textContent
+      document.querySelector('a[href="/notifications"] span')?.textContent,
     );
 
     const messages = Ferdium.safeParseInt(
-      document.querySelector('a[href="/chats"] span')?.textContent
+      document.querySelector('a[href="/chats"] span')?.textContent,
     );
 
     Ferdium.setBadge(notifications + messages);
